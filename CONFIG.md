@@ -40,7 +40,7 @@ Auth-Service 와 **동일한 MySQL 인스턴스**를 사용하며, **스키마�
 로컬 JDBC URL 예시:
 
 ```
-jdbc:mysql://localhost:3307/member_regions_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+jdbc:mysql://localhost:3306/member_regions_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
 ```
 
 ## Secret 관리 규칙

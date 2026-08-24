@@ -1,0 +1,12 @@
+[
+  {"regionCode": 1111010100, "regionName": "서울특별시 종로구 청운효자동", "centerLatitude": 37.5841, "centerLongitude": 126.9706},
+  {"regionCode": 1114010500, "regionName": "서울특별시 중구 명동", "centerLatitude": 37.5636, "centerLongitude": 126.9869},
+  {"regionCode": 1168010100, "regionName": "서울특별시 강남구 역삼동", "centerLatitude": 37.5007, "centerLongitude": 127.0366},
+  {"regionCode": 1168010800, "regionName": "서울특별시 강남구 논현동", "centerLatitude": 37.5112, "centerLongitude": 127.0226},
+  {"regionCode": 1168010300, "regionName": "서울특별시 강남구 개포동", "centerLatitude": 37.4790, "centerLongitude": 127.0493},
+  {"regionCode": 1171010100, "regionName": "서울특별시 송파구 잠실동", "centerLatitude": 37.5133, "centerLongitude": 127.1001},
+  {"regionCode": 1144012000, "regionName": "서울특별시 마포구 서교동", "centerLatitude": 37.5552, "centerLongitude": 126.9231},
+  {"regionCode": 1123010600, "regionName": "서울특별시 동대문구 이문동", "centerLatitude": 37.5986, "centerLongitude": 127.0620},
+  {"regionCode": 1135010500, "regionName": "서울특별시 노원구 상계동", "centerLatitude": 37.6605, "centerLongitude": 127.0695},
+  {"regionCode": 1150010500, "regionName": "서울특별시 강서구 화곡동", "centerLatitude": 37.5416, "centerLongitude": 126.8404}
+]
