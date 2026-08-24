@@ -4,6 +4,14 @@
 
 공통 Error Response: `timestamp`, `status`, `code`, `message`, `path` (+ validation 시 `fieldErrors`)
 
+## 지역 시드 (`regions`)
+
+- 파일: `src/main/resources/db/regions-seed.json`
+- 출처: [cubensys/Korea_District](https://github.com/cubensys/Korea_District) 서울시 행정동 중심점 (WGS84)
+- `regionCode`: 행정동 8자리 + `00` → 10자리 INT (예: `11110515` → `1111051500`)
+- 기동 시 `RegionSeedRunner`가 **없는 코드만** INSERT
+- FE(카카오맵)는 동일 행정동 코드 체계로 `regionCode`를 넘기면 됨
+
 ---
 
 ## GET /api/v1/regions

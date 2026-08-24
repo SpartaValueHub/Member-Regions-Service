@@ -50,3 +50,5 @@ out/
 **/application-override.yml
 *.log
 .DS_Store
+
+tmp-seed/

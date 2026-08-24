@@ -3,7 +3,9 @@ package com.sparta.member_regions_service.config;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +22,7 @@ import com.sparta.member_regions_service.domain.model.Region;
 
 import lombok.RequiredArgsConstructor;
 
-// regions 기준점 시드 (비어 있을 때만 적재)
+// regions 기준점 시드 — 없는 region_code만 추가
 @Component
 @RequiredArgsConstructor
 public class RegionSeedRunner implements ApplicationRunner {
@@ -38,12 +40,23 @@ public class RegionSeedRunner implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		if (regionLoadPort.count() > 0) {
+		List<Region> seedRegions = loadSeedRegions();
+		Set<Integer> existingCodes = new HashSet<>();
+		for (Region region : regionLoadPort.findAll()) {
+			existingCodes.add(region.getRegionCode());
+		}
+
+		List<Region> toInsert = new ArrayList<>();
+		for (Region region : seedRegions) {
+			if (!existingCodes.contains(region.getRegionCode())) {
+				toInsert.add(region);
+			}
+		}
+		if (toInsert.isEmpty()) {
 			return;
 		}
-		List<Region> regions = loadSeedRegions();
-		regionSavePort.saveAll(regions);
-		log.info("regions seed loaded: {} rows", regions.size());
+		regionSavePort.saveAll(toInsert);
+		log.info("regions seed inserted: {} rows (seed total {})", toInsert.size(), seedRegions.size());
 	}
 
 	private List<Region> loadSeedRegions() throws Exception {
