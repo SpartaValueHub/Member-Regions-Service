@@ -13,6 +13,12 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
 
+# 동네 인증 정책 (환경별로 덮어쓸 수 있음)
+member-regions:
+  policy:
+    max-regions-per-member: ${MEMBER_REGIONS_MAX_PER_MEMBER:2}
+    verification-radius-meters: ${MEMBER_REGIONS_VERIFICATION_RADIUS_METERS:3000}
+
 eureka:
   client:
     register-with-eureka: true
