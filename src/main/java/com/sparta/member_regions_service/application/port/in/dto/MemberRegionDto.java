@@ -11,7 +11,7 @@ public record MemberRegionDto(
 		// 대표 여부
 		boolean primary,
 		// 지역 코드
-		int regionCode,
+		long regionCode,
 		// 지역명
 		String regionName,
 		// 인증 완료 여부

@@ -39,7 +39,7 @@ public class MemberRegionPersistenceAdapter implements MemberRegionLoadPort, Mem
 	}
 
 	@Override
-	public boolean existsByMemberUuidAndRegionCode(String memberUuid, int regionCode) {
+	public boolean existsByMemberUuidAndRegionCode(String memberUuid, long regionCode) {
 		return memberRegionJpaRepository.existsByMemberUuidAndRegionCode(memberUuid, regionCode);
 	}
 

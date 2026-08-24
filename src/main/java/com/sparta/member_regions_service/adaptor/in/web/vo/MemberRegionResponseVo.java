@@ -7,7 +7,7 @@ public record MemberRegionResponseVo(
 		Long memberRegionId,
 		String memberUuid,
 		boolean primary,
-		int regionCode,
+		long regionCode,
 		String regionName,
 		boolean verified,
 		Instant verifiedAt,

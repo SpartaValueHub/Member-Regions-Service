@@ -206,7 +206,7 @@ public class MemberRegionCommandService implements
 		return memberRegion;
 	}
 
-	private Region requireRegion(int regionCode) {
+	private Region requireRegion(long regionCode) {
 		return regionLoadPort.findByRegionCode(regionCode)
 				.orElseThrow(() -> new RegionNotFoundException("지원하지 않는 지역 코드입니다."));
 	}

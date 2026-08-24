@@ -24,7 +24,7 @@ public class RegionEntity {
 	// 지역 코드 (PK)
 	@Id
 	@Column(name = "region_code")
-	private Integer regionCode;
+	private Long regionCode;
 
 	// 지역명
 	@Column(name = "region_name", nullable = false, length = 100)
@@ -40,7 +40,7 @@ public class RegionEntity {
 
 	// 시드·저장용
 	public static RegionEntity create(
-			int regionCode,
+			long regionCode,
 			String regionName,
 			BigDecimal centerLatitude,
 			BigDecimal centerLongitude

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sparta.member_regions_service.adaptor.out.mysql.entity.RegionEntity;
 
-public interface RegionJpaRepository extends JpaRepository<RegionEntity, Integer> {
+public interface RegionJpaRepository extends JpaRepository<RegionEntity, Long> {
 
 	List<RegionEntity> findByRegionNameContainingIgnoreCaseOrderByRegionNameAsc(String keyword);
 

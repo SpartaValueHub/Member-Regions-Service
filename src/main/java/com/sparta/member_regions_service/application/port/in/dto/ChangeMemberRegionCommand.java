@@ -5,6 +5,6 @@ public record ChangeMemberRegionCommand(
 		// 회원 동네 PK
 		long memberRegionId,
 		// 새 지역 코드
-		int regionCode
+		long regionCode
 ) {
 }

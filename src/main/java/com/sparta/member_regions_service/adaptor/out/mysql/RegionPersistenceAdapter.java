@@ -24,7 +24,7 @@ public class RegionPersistenceAdapter implements RegionLoadPort, RegionSavePort 
 	private final RegionEntityMapper regionEntityMapper;
 
 	@Override
-	public Optional<Region> findByRegionCode(int regionCode) {
+	public Optional<Region> findByRegionCode(long regionCode) {
 		return regionJpaRepository.findById(regionCode)
 				.map(regionEntityMapper::toDomain);
 	}

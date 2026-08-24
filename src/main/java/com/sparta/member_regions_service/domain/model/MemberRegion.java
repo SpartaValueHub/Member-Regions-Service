@@ -17,7 +17,7 @@ public class MemberRegion {
 	// 대표 동네 여부
 	private boolean primary;
 	// 지역 코드
-	private int regionCode;
+	private long regionCode;
 	// 지역명 (시·동)
 	private String regionName;
 	// GPS 인증 완료 시각 (미인증이면 null)
@@ -31,7 +31,7 @@ public class MemberRegion {
 			Long memberRegionId,
 			String memberUuid,
 			boolean primary,
-			int regionCode,
+			long regionCode,
 			String regionName,
 			Instant verifiedAt,
 			Instant createdAt,
@@ -51,7 +51,7 @@ public class MemberRegion {
 	public static MemberRegion create(
 			String memberUuid,
 			boolean primary,
-			int regionCode,
+			long regionCode,
 			String regionName,
 			Instant createdAt
 	) {
@@ -77,7 +77,7 @@ public class MemberRegion {
 			Long memberRegionId,
 			String memberUuid,
 			boolean primary,
-			int regionCode,
+			long regionCode,
 			String regionName,
 			Instant verifiedAt,
 			Instant createdAt,
@@ -111,7 +111,7 @@ public class MemberRegion {
 	}
 
 	// 지역 코드·명 변경 (인증 무효화)
-	public void changeRegion(int regionCode, String regionName, Instant updatedAt) {
+	public void changeRegion(long regionCode, String regionName, Instant updatedAt) {
 		requireRegionCode(regionCode);
 		requireRegionName(regionName);
 		Objects.requireNonNull(updatedAt, "updatedAt must not be null");
@@ -146,8 +146,8 @@ public class MemberRegion {
 		}
 	}
 
-	private static void requireRegionCode(int regionCode) {
-		if (regionCode <= 0) {
+	private static void requireRegionCode(long regionCode) {
+		if (regionCode <= 0L) {
 			throw new IllegalArgumentException("지역 코드가 올바르지 않습니다.");
 		}
 	}

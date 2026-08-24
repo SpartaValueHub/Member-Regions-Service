@@ -3,7 +3,7 @@ package com.sparta.member_regions_service.application.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -75,7 +75,7 @@ class MemberRegionCommandServiceTest {
 				new BigDecimal("127.0366")
 		);
 		when(regionLoadPort.findByRegionCode(1168010100)).thenReturn(Optional.of(region));
-		when(memberRegionLoadPort.existsByMemberUuidAndRegionCode(anyString(), anyInt())).thenReturn(false);
+		when(memberRegionLoadPort.existsByMemberUuidAndRegionCode(anyString(), anyLong())).thenReturn(false);
 		when(memberRegionLoadPort.countByMemberUuid("member-1")).thenReturn(2L);
 
 		assertThatThrownBy(() -> service.add("member-1", new AddMemberRegionCommand(1168010100, null)))

@@ -8,7 +8,7 @@ import com.sparta.member_regions_service.domain.model.Region;
 // 지역 마스터 조회
 public interface RegionLoadPort {
 
-	Optional<Region> findByRegionCode(int regionCode);
+	Optional<Region> findByRegionCode(long regionCode);
 
 	List<Region> findAll();
 

@@ -11,7 +11,7 @@ public interface MemberRegionJpaRepository extends JpaRepository<MemberRegionEnt
 
 	List<MemberRegionEntity> findByMemberUuidOrderByCreatedAtAsc(String memberUuid);
 
-	boolean existsByMemberUuidAndRegionCode(String memberUuid, int regionCode);
+	boolean existsByMemberUuidAndRegionCode(String memberUuid, long regionCode);
 
 	long countByMemberUuid(String memberUuid);
 

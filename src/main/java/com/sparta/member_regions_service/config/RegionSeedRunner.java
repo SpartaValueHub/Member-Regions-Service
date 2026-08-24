@@ -41,7 +41,7 @@ public class RegionSeedRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		List<Region> seedRegions = loadSeedRegions();
-		Set<Integer> existingCodes = new HashSet<>();
+		Set<Long> existingCodes = new HashSet<>();
 		for (Region region : regionLoadPort.findAll()) {
 			existingCodes.add(region.getRegionCode());
 		}
@@ -79,7 +79,7 @@ public class RegionSeedRunner implements ApplicationRunner {
 
 	// JSON 한 행
 	private record SeedRow(
-			int regionCode,
+			long regionCode,
 			String regionName,
 			BigDecimal centerLatitude,
 			BigDecimal centerLongitude

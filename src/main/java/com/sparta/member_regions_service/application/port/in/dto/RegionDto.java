@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 // 지역 마스터 조회 DTO
 public record RegionDto(
 		// 지역 코드
-		int regionCode,
+		long regionCode,
 		// 지역명
 		String regionName,
 		// 기준점 위도

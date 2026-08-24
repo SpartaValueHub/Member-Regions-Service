@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 // 지역 마스터 응답
 public record RegionResponseVo(
-		int regionCode,
+		long regionCode,
 		String regionName,
 		BigDecimal centerLatitude,
 		BigDecimal centerLongitude

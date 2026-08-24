@@ -10,7 +10,7 @@ import lombok.Getter;
 public class Region {
 
 	// 지역 코드 (PK)
-	private final int regionCode;
+	private final long regionCode;
 	// 지역명 (시·동)
 	private final String regionName;
 	// 기준점 위도
@@ -19,7 +19,7 @@ public class Region {
 	private final BigDecimal centerLongitude;
 
 	private Region(
-			int regionCode,
+			long regionCode,
 			String regionName,
 			BigDecimal centerLatitude,
 			BigDecimal centerLongitude
@@ -32,12 +32,12 @@ public class Region {
 
 	// DB·시드 복원
 	public static Region restore(
-			int regionCode,
+			long regionCode,
 			String regionName,
 			BigDecimal centerLatitude,
 			BigDecimal centerLongitude
 	) {
-		if (regionCode <= 0) {
+		if (regionCode <= 0L) {
 			throw new IllegalArgumentException("지역 코드가 올바르지 않습니다.");
 		}
 		if (regionName == null || regionName.isBlank()) {

@@ -46,7 +46,7 @@ public class MemberRegionEntity {
 
 	// 지역 코드
 	@Column(name = "region_code", nullable = false)
-	private int regionCode;
+	private long regionCode;
 
 	// 지역명
 	@Column(name = "region_name", nullable = false, length = 100)
@@ -68,7 +68,7 @@ public class MemberRegionEntity {
 	public static MemberRegionEntity create(
 			String memberUuid,
 			boolean primary,
-			int regionCode,
+			long regionCode,
 			String regionName,
 			Instant verifiedAt,
 			Instant createdAt,
@@ -88,7 +88,7 @@ public class MemberRegionEntity {
 	// 도메인 변경 반영
 	public void update(
 			boolean primary,
-			int regionCode,
+			long regionCode,
 			String regionName,
 			Instant verifiedAt,
 			Instant updatedAt

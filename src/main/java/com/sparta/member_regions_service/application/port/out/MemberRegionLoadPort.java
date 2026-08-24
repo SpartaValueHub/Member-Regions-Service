@@ -12,7 +12,7 @@ public interface MemberRegionLoadPort {
 
 	List<MemberRegion> findByMemberUuid(String memberUuid);
 
-	boolean existsByMemberUuidAndRegionCode(String memberUuid, int regionCode);
+	boolean existsByMemberUuidAndRegionCode(String memberUuid, long regionCode);
 
 	long countByMemberUuid(String memberUuid);
 }

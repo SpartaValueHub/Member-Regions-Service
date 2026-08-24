@@ -6,11 +6,13 @@
 
 ## 지역 시드 (`regions`)
 
-- 파일: `src/main/resources/db/regions-seed.json`
-- 출처: [cubensys/Korea_District](https://github.com/cubensys/Korea_District) 서울시 행정동 중심점 (WGS84)
-- `regionCode`: 행정동 8자리 + `00` → 10자리 INT (예: `11110515` → `1111051500`)
-- 기동 시 `RegionSeedRunner`가 **없는 코드만** INSERT
-- FE(카카오맵)는 동일 행정동 코드 체계로 `regionCode`를 넘기면 됨
+- 런타임 JSON: `src/main/resources/db/regions-seed.json` (기동 시 없는 코드만 INSERT)
+- **초기화/재적재용 SQL**: `src/main/resources/db/regions-seed.sql` (동일 내용 `docs/regions-seed.sql`)
+  - `CREATE TABLE IF NOT EXISTS` + `INSERT ... ON DUPLICATE KEY UPDATE` (재실행 안전)
+  - EC2 예: `mysql -u... -p member_regions_db < regions-seed.sql`
+- 출처: [vuski/admdongkor](https://github.com/vuski/admdongkor) `HangJeongDong_ver20260401` (전국 행정동, WGS84 중심점)
+- `regionCode`: 행정동 10자리 (`adm_cd2`), DB 타입 **BIGINT**
+- FE(카카오맵)는 동일 행정동 코드로 `regionCode` 전달
 
 ---
 
